@@ -1,0 +1,5 @@
+### Get pokemon list ListAPIModel-t fogja feltölteni adattal
+GET https://pokeapi.co/api/v2/pokemon?limit=5
+
+### Get pokemon details PokemonAPIModel-t fogja feltölteni adattal
+GET https://pokeapi.co/api/v2/pokemon/ditto

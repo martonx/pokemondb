@@ -1,11 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
+using PokemonDB;
 
-Console.WriteLine("Hello, World!");
+var db = new PokemonDbContext();
 
-var apiResponse = await new HttpClient().GetFromJsonAsync<ListAPIModel>("https://pokeapi.co/api/v2/pokemon?limit=5");
+Console.WriteLine("Mit csináljunk? 0 - Kilépés, 1 - Adatbázis inicializálás, 2 - Pokemon lista, 3 - Harc, 4 - Riport");
+var taskString = Console.ReadLine();
+Enum.TryParse<MenuOptions>(taskString, out var task);
 
-foreach (var item in apiResponse.results)
+switch (task)
 {
-    var pokemon = await new HttpClient().GetFromJsonAsync<PokemonAPIModel>($"https://pokeapi.co/api/v2/pokemon/{item.name}");
+    case MenuOptions.Exit:
+        Environment.Exit(0);
+        break;
+    case MenuOptions.Seed:
+        var seedService = new SeedService(db);
+        await seedService.InitDbDataAsync();
+        break;
+    case MenuOptions.List:
+        break;
+    case MenuOptions.Fight:
+        break;
+    case MenuOptions.Report:
+        break;
+    default:
+        break;
 }

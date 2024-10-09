@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿namespace PokemonDB.DbModels;
 
 public class PokemonDBModel
 {
@@ -13,4 +8,6 @@ public class PokemonDBModel
     public int Defense { get; set; }
     public int HitPoint { get; set; }
     public List<PokemonCategoryDBModel> Categories { get; set; }
+    public List<FightDbModel> AttackerFights { get; set; }
+    public List<FightDbModel> DefenderFights { get; set; }
 }

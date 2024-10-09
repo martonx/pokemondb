@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+namespace PokemonDB.DbModels;
+
 [PrimaryKey(nameof(PokemonId), nameof(CategoryId))]
 public class PokemonCategoryDBModel
 {

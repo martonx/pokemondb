@@ -1,4 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using PokemonDB.ApiModels;
+
+namespace PokemonDB.ApiModels;
+
 public class ListAPIModel
 {
     public int count { get; set; }
